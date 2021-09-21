@@ -6,6 +6,6 @@ namespace LocationAndWeatherFinder.Service.ServiceCollection
 {
     public interface IWeatherService
     {
-        ApiResult<WeatherOutput.WeatherDetailedOutput> Get(string cityName);
+        ApiResult<WeatherOutput.WeatherDetailedOutput> ProcessWeather(string cityName);
     }
 }

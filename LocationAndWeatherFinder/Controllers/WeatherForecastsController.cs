@@ -27,7 +27,7 @@ namespace LocationAndWeatherFinder.Controllers
         [HttpPost("Details")]
         public OkObjectResult Post([FromForm] LocationInputDto input)
         {
-            return Ok(_weatherBusiness.GetWeather(input));
+            return Ok(_weatherBusiness.ProcessWeather(input));
         }
     }
 }

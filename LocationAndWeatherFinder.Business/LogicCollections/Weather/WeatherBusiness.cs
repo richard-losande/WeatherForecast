@@ -24,7 +24,7 @@ namespace LocationAndWeatherFinder.Business.LogicCollections.Weather
         /// </summary>
         /// <param name="input"></param>
         /// <returns>returns weather details</returns>
-        public ResultGeneric<List<WeatherOutputDto>> GetWeather(LocationInputDto input)
+        public ResultGeneric<List<WeatherOutputDto>> ProcessWeather(LocationInputDto input)
         {
             var listOfCity = new List<CityDto>();
             var result = new List<WeatherOutputDto>();
@@ -38,7 +38,7 @@ namespace LocationAndWeatherFinder.Business.LogicCollections.Weather
 
         private void ProcessResponse(List<CityDto> listOfCity, List<WeatherOutputDto> result)
         {
-            result.AddRange(listOfCity.Select(city => _weatherService.Get(city.CityName))
+            result.AddRange(listOfCity.Select(city => _weatherService.ProcessWeather(city.CityName))
             .Select(response => new WeatherOutputDto()
             {
                 City = response.Data.name,

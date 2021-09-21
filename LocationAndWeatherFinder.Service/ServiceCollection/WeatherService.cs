@@ -14,7 +14,7 @@ namespace LocationAndWeatherFinder.Service.ServiceCollection
             _configuration = configuration;
         }
 
-        public ApiResult<WeatherOutput.WeatherDetailedOutput> Get(string cityName)
+        public ApiResult<WeatherOutput.WeatherDetailedOutput> ProcessWeather(string cityName)
         {
             var openWeatherKey = _configuration["OpenWeatherMapApi:Key"];
             var url = $"http://api.openweathermap.org/data/2.5/weather?q={cityName}&units=metric&cnt=1&APPID={openWeatherKey}";

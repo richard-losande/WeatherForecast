@@ -6,6 +6,6 @@ namespace LocationAndWeatherFinder.Business.LogicCollections.Weather
 {
     public interface IWeatherBusiness
     {
-        ResultGeneric<List<WeatherOutputDto>> GetWeather(LocationInputDto input);
+        ResultGeneric<List<WeatherOutputDto>> ProcessWeather(LocationInputDto input);
     }
 }
