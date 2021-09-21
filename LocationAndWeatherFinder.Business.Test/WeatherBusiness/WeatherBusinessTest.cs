@@ -40,7 +40,7 @@ namespace LocationAndWeatherFinder.Business.Tests.WeatherBusiness
             Fixture.Inject(weatherServiceMock);
             //act
             var target = Fixture.Create<LogicCollections.Weather.WeatherBusiness>();
-            var result = target.GetWeather(input);
+            var result = target.ProcessWeather(input);
             //assert
             Assert.IsNotNull(result.Data);
             Repository.VerifyAll();
